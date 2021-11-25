@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Roboto:wght@400;500;700;900&display=swap');
+$primary_font: 'Roboto', sans-serif;;
+$secondary_font: 'Prata', serif;
+$site_yellow: #fdd062;
+$primary_color: #31512a;
+$text_color: #777777;
+$section_head: #5b8c51;
+$website_color: #f7f7f7;
+
+%btn {
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 3px;
+    width: 200px;
+    height: 60px;
+    background-color: $primary_color;
+    border: none;
+    font-size: 14px;
+}
+%big_heading {
+    font-size: 50px;
+    letter-spacing: -1px;
+    font-weight: 400;
+    font-family: $secondary_font;
+    color: $primary_color;
+    text-transform: capitalize;
+}
+%sm_heading {
+    font-size: 14px;
+    color: $primary_color;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $primary_font;
+}
+a {
+    text-decoration: none;
+}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.container_custom {
+    width: 1294px;
+    margin: auto;
+}
+
+
+
+// main style starts here 
+header {
+    nav {
+        .nav_top {
+            height: 35px;
+            background: #5b8c51;
+            display: flex;
+            align-items: center;
+            
+            .h_info {
+                i , span {
+                    font-size: 14px;
+                    color: #fff;
+                    cursor: pointer;
+                    margin-right: 4px;
+                }
+            }
+            .h_icon {
+                text-align: right;
+                i {
+                    font-size: 14px;
+                    color: #fff;
+                    margin-left: 14px;
+                    cursor: pointer;
+                }
+            }
+        }
+        // nav bottom =================
+        .nav_bottom {
+            display: flex;
+            align-items: center;
+            background: $primary_color;
+            height: 100px;
+            .nav_brand {
+                cursor: pointer;
+            }
+            .menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                ul {
+                    display: flex;
+                    margin: 0;
+                    padding: 0;
+                    li {
+                        margin-left: 45px;
+                        a {
+                            color: #fff;
+                            font-size: 14px;
+                            font-weight: 400;
+                            position: relative;
+                            &::before{
+                                content: "";
+                                height: 1px;
+                                width: 0%;
+                                background: #ffa500;
+                                position: absolute;
+                                bottom: -2px;
+                                left: 50%;
+                                transition: .4s;
+                                visibility: hidden;
+                                opacity: 0;
+                            }
+                            &:hover {
+                                color: #ffa500;
+                            }
+                            &:hover::before {
+                                visibility: visible;
+                                opacity: 1;
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+
+                    }
+                }
+                .search_btn {
+                    color: #fff;
+                    font-size: 18px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+// banner section ========================== 
+.banner {
+    height: 700px;
+    width: 100%;
+    background: url(../img/cows.png);
+    background-size: cover;
+    background-position: center;
+    padding: 200px;
+    
+    .banner_info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .banner_text {
+            position: relative;
+            .banner_content {
+                position: absolute;
+                top: 35px;
+                left: 50%;
+                width: 100%;
+                transform: translateX(-50%);
+                p {
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 400;
+                    letter-spacing: 3px;
+                    margin-top: 27px;
+                }
+                h1 {
+                    color: #fff;
+                    font-family: $secondary_font;
+                    font-size: 80px;
+                    letter-spacing: -2px;
+                    line-height: 70px;
+                }
+                button {
+                    @extend %btn;
+                    margin-top: 35px;
+                }
+            }
+        }
+    }
+}
+
+
+//about section =================
+.about {
+    padding-top: 170px;
+    padding-bottom: 115px;
+    .about_left {
+        position: relative;
+        .about_img_top {
+            position: absolute;
+            top: -61px;
+            left: 0;
+        }
+        .about_img_bottom {
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+    }
+    .about_right {
+        h1.about_head {
+            @extend %big_heading;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+        p.about_para {
+            font-size: 18px;
+            font-weight: 400;
+            font-family: $primary_font;
+            color: $text_color;
+            padding-right: 30px;
+            margin-bottom: 30px;
+        }
+        .about_box {
+            h3 {
+                @extend %big_heading;
+                font-size: 18px;
+                letter-spacing: 0;
+            }
+            p {
+                color: $text_color;
+                font: 14px;
+            }
+        }
+        .about_btn {
+            button {
+                @extend %btn;
+                margin-top: 35px;
+            }
+        }
+    }
+}
+
+// support section ===================================
+section.support {
+    position: relative;
+    .support_bg {
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        z-index: -5;
+        .bg_color {
+            height: 200px;
+            background: $site_yellow;
+            width: 100%;
+        }
+        .bg_img {
+            height: 200px;  
+            position: absolute; 
+            top: 20px;
+            right: 0;
+        }
+        .bg_water {
+            max-width: 1600px;
+            margin: auto;
+            position:relative;
+            top: -50px;
+            z-index: -39;
+        }
+    }
+    .support_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 333px;
+        background-color: #fff;
+        .card_info {
+            h1 {
+                font-size: 60px;
+                font-weight: 400;
+                color: $primary_color;
+                font-family: $secondary_font;
+            }
+            p {
+                font-size: 15px;
+                color: $text_color;
+            }
+        }
+    }
+
+    // owl carousel our supporters section
+    .our_supporters {
+        text-align: center;
+        padding-bottom: 120px;
+        border-bottom: 1px solid #e1e1e1;
+        margin-top: 150px;
+        p {
+            @extend %sm_heading;
+        }
+        .item{
+            padding: 20px 0;
+            img {
+                width: auto;
+                transition: .3s;
+                &:hover {
+                    transform: scale(1.1);
+                    filter: contrast(200%) saturate(500);
+                }
+            }
+        }
+    }
+}
+
+
+
+// service section is here 
+.service {
+    .service_head {
+        padding-top: 80px;
+        padding-bottom: 60px;
+        .sub_title h5 {
+            @extend %sm_heading;
+            margin-bottom: 20px
+        }
+        .title h1{
+            @extend %big_heading;
+            font-family: 'Prata', serif;
+        }
+    }
+    .service_box {
+        z-index: 5;
+        cursor: pointer;
+        .box_top {
+            width: 100%;
+            position: relative;
+            & > img {
+                width: 100%;
+            }
+            span {
+                height: 80px;
+                width: 80px;
+                line-height: 80px;
+                text-align: center;
+                background: $site_yellow;
+                position: absolute;
+                bottom: 0;
+                right: 30px;
+            }
+        }
+        .box_bottom {
+            padding: 25px;
+            background: #fff;
+            h4 {
+                @extend %big_heading;
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+            p {
+                color: $text_color;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 400;
+            }
+        }
+    }
+    .service_info {
+        height: 470px;
+        width: 100%;
+        background: $primary_color;
+        margin-top: -164px;
+        .container_custom {
+            height: 100% !important;
+            position: relative;
+            .service_contact {
+                position: absolute;
+                bottom: 100px;
+                left: 0;
+                width: 100%;
+                .contact_num,
+                .contact_email {
+                    position: relative;
+                    i {
+                        color: $site_yellow;
+                        font-size: 65px;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        line-height: 100px;
+                    }
+                    p {
+                        font-size: 16px;
+                        font-weight: 400;
+                        margin: 0;
+                        padding: 0;
+                        color: $text_color;
+                        margin-bottom: 10px;
+                    }
+                    h1 {
+                        @extend %big_heading;
+                        color: #ffff;
+                        font-size: 60px;
+                        text-transform: lowercase;
+                    }
+                }
+                .contact_email {
+                    padding-left: 60px;
+                }
+                .contact_num::before{
+                    content: "";
+                    height: 1px;
+                    width: 100px;
+                    background: $site_yellow;
+                    position: absolute;
+                    top: 50%;
+                    left: 93%;
+                }
+            }
+        }
+    }
+}
+
+
+// project section starts here 
+.project {
+    padding: 100px 0;
+    .project_head {
+        p {
+            @extend %sm_heading
+        }
+        h1 {
+            @extend %big_heading;
+            padding-bottom: 70px;
+        }
+    }
+    .project_info {
+        .project_box {
+            position: relative;
+            overflow: hidden;
+            
+            .project_img {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                img {
+                    width: 100%;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0.3) 100%);
+                }
+            }
+            .project_show {
+                position: absolute;
+                bottom: 53px;
+                padding: 0 45px;
+                transition: .4s;
+                p {
+                    font-size: 14px;
+                    color: #fff;
+                    line-height: 25px;
+                }
+                h2 {
+                    @extend %big_heading;
+                    font-size: 24px;
+                    color: #fff;
+                }
+            }
+            .project_hide {
+                position: absolute;
+                bottom: -200px;
+                left: 0;
+                padding: 0 45px;
+                transition: .4s;
+                p {
+                    color: #ffff;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 24px;
+                }
+                .project_btn {
+                    font-size: 14px;
+                    line-height: 70px;
+                    color: $site_yellow;
+                    font-weight: 700;
+                    background: none;
+                    border: none;
+                }
+            }
+            &:hover .project_hide{
+                bottom: 0;
+            }
+            &:hover .project_show{
+                bottom: 180px;
+            }
+            
+        }
+    }
+}
+
+
+// testimonial sectiol is here 
+.testimonial {
+    padding: 100px 0;
+    background: $website_color;
+    .testimonial_head {
+        p {
+            @extend %sm_heading;
+        }
+        h1 {
+            @extend %big_heading;
+        }
+    }
+    .testimonial_first_carousel {
+        padding: 50px 0;
+        position: relative;
+        border-bottom: 1px solid #e8e7e3;
+        img {
+            width: 80%;
+        }
+        p {
+            @extend %big_heading;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 50px;
+            margin-left: -30px;
+            text-transform: none;
+        }
+        .owl-dots {
+            position: absolute;
+            left: 0;
+            bottom: -55px;
+            width: 100%;
+            display: flex;
+
+            .owl-dot {
+                flex: 1;
+                span {
+                    width: 50%;
+                    height: 4px;
+                    background: $primary_color;
+                    border-radius: 0;
+                    margin: auto;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: .5s;
+                }
+            }
+            .owl-dot.active {
+                span {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .testimonial_team {
+        .team_about {
+            opacity: .5;
+            transition: .3s;
+            img {
+                transition: .3s;
+                cursor: pointer;
+            }
+            h4 {
+                @extend %big_heading;
+                font-size: 20px;
+                letter-spacing: .7px;
+                cursor: pointer;
+            }
+            &:hover {
+                opacity: 1;
+            }
+            &:hover img {
+                transform: translateY(-15px);
+            }
+        }
+    }
+}
+
+
+
+// FAQ section 
+.faq {
+    padding: 80px 0;
+    .faq_info {
+        .faq_head {
+            margin-bottom: 65px;
+            h1 {
+                @extend %big_heading;
+            }
+            p {
+                @extend %sm_heading
+            }
+        }
+        .accordion-item {
+            border: none !important;
+            border-radius: 0 !important;
+            .accordion-header{
+                .accordion-button {
+                    height: 70px;
+                    background: #fff;
+                    border: none !important;
+                    border-top: 1px solid #e4e4e4 !important;
+                    font-size: 18px;
+                    font-family: $secondary_font;
+                    color: $primary_color;
+                    font-weight: 400;
+                    position: relative;
+                    &:focus {
+                        box-shadow: none;
+                    }
+                    &::after {
+                        flex-shrink: 0;
+                        width: 1.25rem;
+                        height: 1.25rem;
+                        margin-left: auto;
+                        content: "";
+                        background-image: url(../img/minus.png);
+                        background-repeat: no-repeat;
+                        background-size: 1.25rem;
+                        transition: transform .2s ease-in-out;
+                    }
+                    &.collapsed::after {
+                        background-image:  url(../img/plus.png);
+                        z-index: 20;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// blog section is here 
+.blog {
+    padding: 100px 0;
+    
+    .blog_head {
+        padding-bottom: 50px;
+        text-align: center;
+        p {
+            @extend %sm_heading;
+        }
+        h1 {
+            @extend %big_heading;
+        }
+    }
+    .card {
+        cursor: pointer;
+        transition: .4s;
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+        }
+        p {
+            @extend %sm_heading;
+        }
+        h5 {
+            @extend %big_heading;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 0;
+            margin-bottom: 30px;
+        }
+        a {
+            border: none;
+            background: none;
+            color: #bebebe;
+            font-size: 14px;
+            line-height: 26px;
+            text-decoration: underline;
+            padding: 0;
+            width: 35%;
+            transition: .3s;
+            &:hover {
+                font-size: 15px;
+                transform: translateY(-5px);
+            }
+        }
+        i {
+            color: $primary_color;
+            display: inline-block;
+            width: 60%;
+            text-align: right;
+            
+        }
+        .card-body {
+            padding: 40px;
+        }
+    }
+}
+
+
+
+// footer is here 
+footer {
+    .footer_top {
+        padding: 100px 0;
+        background: $primary_color;
+        h4 {
+            color: #fff;
+            @extend %big_heading;
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: 0;
+            margin-bottom: 45px;
+        }
+        p {
+            color: #c1cbbe;
+            font-size: 18px;
+            line-height: 30px;
+            padding-right: 10px;
+        }
+        h5 {
+            @extend %sm_heading;
+            color: #fff;
+            font-size: 14px;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+        .social_box {
+            i {
+                color: #fff;
+                font-size: 20px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                margin-right: 10px;
+                background-color: transparent;
+                transition: .3s;
+                cursor: pointer;
+                &:hover {
+                    background-color: #ffff;
+                    color: $primary_color;
+                }
+            }
+        }
+        ul li a {
+            color: #c1cbbe;
+            font-size: 16px;
+            line-height: 42px;
+            &:hover {
+                color: $site_yellow;
+            }
+        }
+        .footer_form {
+            input {
+                width: 300px;
+                height: 60px;
+                line-height: 60px;
+                padding: 20px;
+                display: block;
+                border: 1px solid transparent;
+                margin-bottom: 30px;
+                letter-spacing: 1px;
+                &:focus {
+                    outline: none;
+                }
+            }
+            button {
+                height: 60px;
+                width: 300px;
+                display: block;
+                background-color: $site_yellow;
+                border: none;
+                @extend %sm_heading;
+                font-weight: bold;
+            }
+        } 
+    }
+
+    .footer_bottom {
+        background-color: $site_yellow;
+        padding: 20px 0;
+        .copy_text {
+            p {
+                color: $primary_color;
+                font: 16px;
+                line-height: 24px;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+        .quick_links {
+            a {
+                color: $primary_color;
+                text-transform: capitalize;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 24px;
+                margin-left: 45px;
+            }
+        }
+    }
+}
